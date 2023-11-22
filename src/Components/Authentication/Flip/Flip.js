@@ -7,20 +7,12 @@ const Flip = () => {
   const [rot, setRotate] = useState(false);
 
   return (
-    <div className={"flip-card"}>
+    <div className="flip-card">
       <br />
-      <div
-        className={
-          rot ? ["flip-card-inner", "rot"].join(" ") : "flip-card-inner"
-        }
-      >
-        <div
-          onClick={() => setRotate(!rot)}
-          rot={rot}
-          className="flip-card-front"
-        >
+      <div className={rot ? "flip-card-inner rot" : "flip-card-inner"}>
+        <div onClick={() => setRotate(!rot)} className="flip-card-front">
           <div className="registerText">
-            <h1>Click here to sign in</h1>
+            <h1 className="textForEnter">Click here to sign in</h1>
           </div>
         </div>
         <div className="flip-card-back">
@@ -30,11 +22,7 @@ const Flip = () => {
           <div className="signInBox">
             <SignIN />
           </div>
-          <div
-            className="icon111"
-            onClick={() => setRotate(!rot)}
-            rot={rot}
-          ></div>
+          <div className="icon111" onClick={() => setRotate(!rot)}></div>
         </div>
       </div>
     </div>

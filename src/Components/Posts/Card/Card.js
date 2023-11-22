@@ -38,7 +38,7 @@ const Card = (props) => {
                   style={{
                     height: 30,
                     fontSize: 20,
-                    color: "black",
+                    color: "white",
                   }}
                 >
                   <b>{props.name}</b>
@@ -46,7 +46,7 @@ const Card = (props) => {
                 <div className="title3">
                   <p
                     style={{
-                      color: "black",
+                      color: "white",
                       textAline: "center",
                       fontSize: 25,
                     }}
@@ -61,7 +61,7 @@ const Card = (props) => {
               <div className="desc3">
                 <p
                   style={{
-                    color: "black",
+                    color: "white",
                     textAline: "center",
                     fontSize: 20,
                   }}
@@ -72,7 +72,7 @@ const Card = (props) => {
               <div className="date3">
                 <p
                   style={{
-                    color: "black",
+                    color: "white",
                     textAline: "center",
                     fontSize: 20,
                   }}

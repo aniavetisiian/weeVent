@@ -13,7 +13,7 @@
   height: 400px;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px 2px rgba(230, 173, 233, 0.75);
 }
 
 .rot1 {
@@ -29,13 +29,15 @@
 }
 
 .flip-card-front-Card {
-  background-color: #d3beab;
+  background-color: #e9c6e6;
   color: black;
 }
 
 .flip-card-back-Card {
   text-align: center;
-  background-color: #d3beab;
+  background-image: url(../../../Authentication/Flip/img/backImage.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
   transform: rotateY(180deg);
   flex-wrap: wrap;

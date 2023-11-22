@@ -4,6 +4,7 @@ import Posts from "./Components/Posts/Posts";
 import Profile from "./Components/myProfile/Profile";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
+//import { Router } from "express";
 
 class App extends React.Component {
   state = {
@@ -102,10 +103,10 @@ class App extends React.Component {
   fetchData = async () => {
     try {
       const data = await fetch(
-        //"https://francophone-eh-53274.herokuapp.com/posts"
+        "http://localhost:3000/posts"
       );
       const fetchedData = await data.json();
-      console.log(fetchedData);
+      console.log(fetchedData,'xxasas');
 
       this.setState({ postsData: fetchedData });
     } catch (error) {

@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const SideMenu = (props) => {
   return (
-    <div style={{ width: "12%", height: "100%", backgroundColor: "#827262" }}>
+    <div className="sideMenu">
       <div className="AvatarWrap">
         <Avatar className="bgAvatar" src={props.avatar} />
       </div>

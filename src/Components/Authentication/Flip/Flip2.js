@@ -13,27 +13,19 @@ const Flip2 = () => {
           rot ? ["flip-card-inner", "rot"].join(" ") : "flip-card-inner"
         }
       >
-        <div
-          onClick={() => setRotate(!rot)}
-          rot={rot}
-          className="flip-card-front"
-        >
+        <div onClick={() => setRotate(!rot)} className="flip-card-front">
           <div className="registerText">
-            <h1>Click here to registor</h1>
+            <h1>Click here to sign up</h1>
           </div>
         </div>
         <div className="flip-card-back">
           <div>
-            <h1 className="registerText2">Registor</h1>
+            <h1 className="registerText2">Sign up</h1>
           </div>
           <div className="signInBox">
             <Registration />
           </div>
-          <div
-            className="icon333"
-            onClick={() => setRotate(!rot)}
-            rot={rot}
-          ></div>
+          <div className="icon333" onClick={() => setRotate(!rot)}></div>
         </div>
       </div>
     </div>

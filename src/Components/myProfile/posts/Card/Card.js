@@ -34,6 +34,7 @@ const MyCard = (props) => {
             {props.title}
           </p>
           <p style={{ margin: 10, color: "black" }}>{props.desc}</p>
+          <br></br>
           <p style={{ margin: 3, color: "black" }}>{props.date}</p>
         </div>
       </div>

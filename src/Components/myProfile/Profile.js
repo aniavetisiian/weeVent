@@ -10,23 +10,20 @@ class Profile extends React.Component {
     avatar: "",
     name: "",
     email: "",
-    data: [],
+    data: {},
   };
 
   //addPost
   submit = async (value) => {
     const token = localStorage.getItem("token");
-    const data = await fetch(
-      "https://francophone-eh-53274.herokuapp.com/posts/add", //?
-      {
-        method: "POST",
-        headers: {
-          "auth-token": token,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(value),
-      }
-    );
+    const data = await fetch("http://localhost:3000/posts/add", {
+      method: "POST",
+      headers: {
+        "auth-token": token,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(value),
+    });
     const fetchedData = await data.json();
     console.log(fetchedData);
   };
@@ -35,7 +32,10 @@ class Profile extends React.Component {
     try {
       const token = localStorage.getItem("token");
       const userData = await fetch(
-        "https://francophone-eh-53274.herokuapp.com/posts/profile",
+        //`http://localhost:3000/posts/${this.state._id}`,
+        //`http://localhost:3000/user/${this.state._id}`,
+        //"http://localhost:3000/posts/user/auth/profile",
+        "http://localhost:3000/posts/user/655ca780904d398f3d34324d", //id get
         // "https://francophone-eh-53274.herokuapp.com/user/auth/profile",
         {
           method: "GET",
@@ -63,7 +63,8 @@ class Profile extends React.Component {
     try {
       const token = localStorage.getItem("token");
       const userData = await fetch(
-        "https://francophone-eh-53274.herokuapp.com/posts/profile",
+        //`http://localhost:3000/user/${this.state._id}`, // get user Id and change with :userId
+        "http://localhost:3000/posts/user/:userId", //id get
         // "https://francophone-eh-53274.herokuapp.com/user/auth/profile",
         {
           method: "GET",

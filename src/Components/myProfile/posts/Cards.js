@@ -21,9 +21,9 @@ const Cards = (props) => {
   const posts = props.data.length ? (
     props.data.map((data) => (
       <MyCard
-        img={data.img}
+        img={data.imgUrl}
         title={data.title}
-        desc={data.desc}
+        desc={data.description}
         date={data.data}
       />
     ))

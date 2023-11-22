@@ -22,7 +22,7 @@ class Registration extends React.Component {
     console.log(values);
     try {
       const data = await fetch(
-        "https://francophone-eh-53274.herokuapp.com/user/auth/signup",
+        "http://localhost:3000/user/auth/signup",
         {
           method: "POST",
           headers: {
@@ -52,7 +52,7 @@ class Registration extends React.Component {
         onSubmit={(values, { setSubmitting, resetForm }) => {
           setSubmitting(true);
           this.singUp(values);
-          // alert(JSON.stringify(values, null, 2));
+          alert(JSON.stringify(values, null, 2));
           resetForm();
           setSubmitting(false);
         }}

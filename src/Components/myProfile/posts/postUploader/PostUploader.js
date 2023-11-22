@@ -5,7 +5,7 @@ import { Formik } from "formik";
 class postUploader extends React.Component {
   // submit = async(value) => {
   //   const token = localStorage.getItem('token')
-  //     const data = await fetch('https://francophone-eh-53274.herokuapp.com/posts/add',{
+  //     const data = await fetch('http://localhost:3000/posts/add',{
   //         method: 'POST',
   //         headers: {
   //             "auth-token": token,

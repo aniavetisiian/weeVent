@@ -11,7 +11,9 @@
 }
 
 .modalWrap {
-  background-color: rgb(236, 202, 169);
+  background-image: url(../../../Authentication/Flip/img/backImage.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 450px;
   width: 400px;
   position: absolute;

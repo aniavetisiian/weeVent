@@ -19,16 +19,13 @@ class SignIN extends React.Component {
     console.log(values);
 
     try {
-      const data = await fetch(
-        "https://francophone-eh-53274.herokuapp.com/user/auth/signin",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        }
-      );
+      const data = await fetch("http://localhost:3000/user/auth/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
 
       const fetchedData = await data.json();
       console.log(fetchedData);
@@ -98,7 +95,7 @@ class SignIN extends React.Component {
                 }
               />
               <Error touched={touched.password} message={errors.password} />
-              <button type="submit">Login</button>
+              <button type="submit">Sign in</button>
             </div>
           </form>
         )}
