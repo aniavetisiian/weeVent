@@ -1,0 +1,122 @@
+.Card3 {
+  width: 400px;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  /* overflow: auto; */
+  background-image: url("2.jpg");
+  background-size: cover;
+  text-align: center;
+  display: block;
+}
+hr {
+  width: 50%;
+  height: 1px;
+  background: black;
+}
+.text3 {
+  text-align: right;
+  margin-right: 35px;
+  margin-top: 8px;
+  font-size: 20px;
+}
+.img3 {
+  width: 400px;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.data3 {
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+}
+.avatar3 {
+  padding: 4%;
+  width: 55px;
+  height: 55px;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.title3 {
+  margin-left: 10px;
+  margin-top: 35px;
+}
+.info3 {
+  display: flex;
+}
+
+.infoText3 {
+  margin-top: 20px;
+}
+.infoIcon3 {
+  padding: 3%;
+  width: 8px;
+  height: 8px;
+  background-image: url(trash.png);
+  background-size: cover;
+  margin-left: 169px;
+  margin-top: 12px;
+}
+
+.flip-card13 {
+  background-color: transparent;
+  width: 400px;
+  height: 600px;
+  perspective: 1000px;
+  margin: 20px;
+}
+
+.flip-card-inner13 {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 7px -8px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rot13 {
+  transform: rotateY(-180deg);
+}
+
+.flip-card-front13,
+.flip-card-back13 {
+  position: absolute;
+  width: 400px;
+  height: 600px;
+  backface-visibility: hidden;
+}
+
+.flip-card-front13 {
+  background-image: url(https://abali.ru/wp-content/uploads/2011/02/book8.jpg);
+  color: black;
+}
+.icon3 {
+  background-image: url(back.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50px;
+  margin-left: 20px;
+
+  height: 50px;
+}
+.flip-card-back13 {
+  background-color: #d3beab;
+  color: white;
+  transform: rotateY(180deg);
+
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.registerText13 {
+  width: 220px;
+  text-align: center;
+  font-size: 25px;
+  padding-left: 80px;
+  text-decoration: underline;
+  padding-top: 50px;
+}

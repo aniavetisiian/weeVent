@@ -1,0 +1,22 @@
+.cards {
+  width: 100%;
+  height: 100%;
+  padding-left: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  background-size: cover;
+  background-color: #b39f8a;
+}
+.header {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: #b39f8a;
+}
+.mainText {
+  color: #f2e9e4;
+  font-size: 100px;
+  text-align: center;
+  text-decoration: underline #64574a;
+}
