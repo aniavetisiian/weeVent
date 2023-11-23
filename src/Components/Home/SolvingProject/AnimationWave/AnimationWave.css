@@ -10,8 +10,7 @@
   background-image: url(../../img/paper-plane.png);
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 100px auto; /* Adjust the margin based on your layout */
-
+  margin: 100px auto; 
   position: absolute;
   animation: upDown 1.5s alternate infinite ease-in-out;
 }

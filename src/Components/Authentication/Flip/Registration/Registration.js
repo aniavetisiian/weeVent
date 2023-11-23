@@ -21,16 +21,13 @@ class Registration extends React.Component {
   singUp = async (values) => {
     console.log(values);
     try {
-      const data = await fetch(
-        "http://localhost:3000/user/auth/signup",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        }
-      );
+      const data = await fetch("http://localhost:3000/user/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
 
       const fetchedData = await data.json();
       console.log(fetchedData);
@@ -68,7 +65,7 @@ class Registration extends React.Component {
           <form className="modal-content" onSubmit={handleSubmit}>
             <div className="container">
               <label htmlFor="text">
-                <b className="textInput">Username</b>
+                <b className="textInput">Օգտանուն</b>
               </label>
               <input
                 id="username"
@@ -85,7 +82,7 @@ class Registration extends React.Component {
               <Error touched={touched.username} message={errors.username} />
 
               <label htmlFor="avatar">
-                <b className="textInput">Avatar</b>
+                <b className="textInput">Գլխավոր նկար</b>
               </label>
               <input
                 id="avatar"
@@ -99,7 +96,7 @@ class Registration extends React.Component {
               />
               <Error touched={touched.avatar} message={errors.avatar} />
               <label htmlFor="email">
-                <b className="textInput">Email</b>
+                <b className="textInput">Էլ. հասցե</b>
               </label>
               <input
                 id="email"
@@ -113,7 +110,7 @@ class Registration extends React.Component {
               />
               <Error touched={touched.email} message={errors.email} />
               <label htmlFor="password">
-                <b className="textInput">Password</b>
+                <b className="textInput">Գաղտնագիր</b>
               </label>
               <input
                 id="password"
@@ -128,7 +125,7 @@ class Registration extends React.Component {
                 }
               />
               <Error touched={touched.password} message={errors.password} />
-              <button type="submit">Sign Up</button>
+              <button type="submit">Գրանցվել</button>
             </div>
           </form>
         )}

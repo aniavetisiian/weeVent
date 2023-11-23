@@ -6,7 +6,6 @@ const generateRandomMatrix = (m, n) => {
   for (let i = 0; i < m; i++) {
     const row = [];
     for (let j = 0; j < n; j++) {
-      // Generate a random number between 1 and 20
       const randomNumber = Math.floor(Math.random() * 20) + 1;
       row.push(randomNumber);
     }
@@ -18,11 +17,9 @@ const generateRandomMatrix = (m, n) => {
 const moveMinMaxWithinColumns = (matrix) => {
   const m = matrix.length;
 
-  // Create a new matrix with the same values
   const newMatrix = matrix.map((row) => [...row]);
 
   for (let i = 0; i < m; i++) {
-    // Find the indices of the minimum and maximum values in each column
     let minIndex = 0;
     let maxIndex = 0;
 
@@ -35,7 +32,6 @@ const moveMinMaxWithinColumns = (matrix) => {
       }
     }
 
-    // Swap the minimum and maximum values within the column
     [newMatrix[minIndex][i], newMatrix[maxIndex][i]] = [
       newMatrix[maxIndex][i],
       newMatrix[minIndex][i],
@@ -63,15 +59,15 @@ const MatrixManipulation = () => {
   return (
     <div>
       <label>
-        Enter the value of m:
+        Մուտքագրել m-ը:
         <input type="number" value={m} onChange={(e) => setM(e.target.value)} />
       </label>
 
-      <button onClick={handleGenerateMatrix}>Generate Random Matrix</button>
-      <button onClick={handleMoveColumns}>Move Columns</button>
+      <button onClick={handleGenerateMatrix}>Գեներացնել մատրից</button>
+      <button onClick={handleMoveColumns}>Կատարել տեղափոխում</button>
 
       <div>
-        <h3>Input Matrix:</h3>
+        <h3>Գեներացված մատրից:</h3>
         <table>
           <tbody>
             {inputMatrix.map((row, rowIndex) => (
@@ -86,7 +82,7 @@ const MatrixManipulation = () => {
       </div>
 
       <div>
-        <h3>Result Matrix:</h3>
+        <h3>Տեղափոխված մատրից:</h3>
         <table>
           <tbody>
             {resultMatrix.map((row, rowIndex) => (

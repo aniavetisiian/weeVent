@@ -3,7 +3,6 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import "./SignIn.css";
 import Error from "../Error";
-// import { Redirect } from "react-router";
 import { withRouter } from "react-router";
 
 const validationSchema = Yup.object().shape({
@@ -28,14 +27,13 @@ class SignIN extends React.Component {
       });
 
       const fetchedData = await data.json();
-      console.log(fetchedData,'fetchDatatatta');
+      console.log(fetchedData, "fetchDatatatta");
 
       if (fetchedData.message) {
         alert(fetchedData.message);
       } else {
         localStorage.setItem("token", fetchedData.auth_token);
         localStorage.setItem("userId", fetchedData.userId);
-        
 
         this.props.history.push("/myProfile");
       }
@@ -68,7 +66,7 @@ class SignIN extends React.Component {
           <form className="modal-content" onSubmit={handleSubmit}>
             <div className="container">
               <label htmlFor="text">
-                <b className="textInput">Email</b>
+                <b className="textInput">Էլ. հասցե</b>
               </label>
               <input
                 id="text"
@@ -83,7 +81,7 @@ class SignIN extends React.Component {
               <Error touched={touched.email} message={errors.email} />
 
               <label htmlFor="password">
-                <b className="textInput">Password</b>
+                <b className="textInput">Գաղտնագիր</b>
               </label>
               <input
                 id="password1"
@@ -98,7 +96,7 @@ class SignIN extends React.Component {
                 }
               />
               <Error touched={touched.password} message={errors.password} />
-              <button type="submit">Sign in</button>
+              <button type="submit">Մուտք գործել</button>
             </div>
           </form>
         )}

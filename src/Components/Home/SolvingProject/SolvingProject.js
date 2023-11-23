@@ -5,7 +5,7 @@ import MatrixManipulation from "./Problem/Problem";
 const SolvingProject = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showMenuModal, setShowMenuModal] = useState(false);
-  const [selectedMenuItem, setSelectedMenuItem] = useState("");
+  const [selectedMenuItem, setSelectedMenuItem] = useState("help");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [studentTextColor, setStudentTextColor] = useState("#000");
@@ -27,7 +27,7 @@ const SolvingProject = () => {
       setShowLoginModal(false);
       setShowMenuModal(true);
     } else {
-      alert("Invalid username or password");
+      alert("Չի հաջովել մուտք գործել");
     }
   };
 
@@ -36,29 +36,37 @@ const SolvingProject = () => {
   };
 
   const handleLogout = () => {
-    const confirmLogout = window.confirm("Do you want to leave?");
+    const confirmLogout = window.confirm("Դուք ցանկանու՞մ եք դուրս գալ");
 
     if (confirmLogout) {
       setShowMenuModal(false);
       setSelectedMenuItem("");
       setUsername("");
       setPassword("");
-      setShowLoginModal(true);
+      setShowLoginModal(false);
     }
+  };
+
+  const handleCancelation = () => {
+    setShowMenuModal(false);
+    setSelectedMenuItem("");
+    setUsername("");
+    setPassword("");
+    setShowLoginModal(false);
   };
 
   const getAdviceForTheDay = () => {
     const adviceMessages = [
-      "Take a moment to appreciate the small things.",
-      "Set realistic goals for today and stay focused.",
-      "Connect with someone you care about.",
-      "Try something new or step out of your comfort zone.",
-      "Practice gratitude and count your blessings.",
-      "Take breaks to rest and recharge throughout the day.",
-      "Remember to smile; it can make a big difference.",
+      "Մի պահ հատկացրեք փոքր բաները գնահատելու համար:",
+      "Այսօրվա համար իրատեսական նպատակներ դրեք և մնացեք կենտրոնացած:",
+      "Կապվեք մեկի հետ, ում մասին հոգ եք տանում:",
+      "Փորձեք ինչ-որ նոր բան կամ դուրս եկեք ձեր հարմարավետության գոտուց:",
+      "Գնահատիր և շնորհակալ եղիր դրականի համար։",
+      "Օրվա ընթացքում հանգստանալու և լիցքավորվելու համար ընդմիջումներ կատարեք:",
+      "Հիշիր ժպտալ, դա շատ բան կարող է փոխել։",
     ];
 
-    const dayOfWeek = new Date().getDay(); // 0 (Sunday) to 6 (Saturday)
+    const dayOfWeek = new Date().getDay();
     const adviceIndex = dayOfWeek % adviceMessages.length;
     return adviceMessages[adviceIndex];
   };
@@ -66,7 +74,7 @@ const SolvingProject = () => {
   return (
     <div className="appSolvingProject">
       <button onClick={() => setShowLoginModal(true)}>
-        Project and Problem Solving
+        Կուրսային աշխատանք
       </button>
 
       {showLoginModal && (
@@ -76,7 +84,7 @@ const SolvingProject = () => {
             style={{ maxHeight: "400px", overflowY: "auto" }}
           >
             <label>
-              Username:
+              Գաղտնանուն:
               <input
                 type="text"
                 value={username}
@@ -84,14 +92,17 @@ const SolvingProject = () => {
               />
             </label>
             <label>
-              Password:
+              Գաղտնագիր:
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </label>
-            <button onClick={handleLogin}>Submit</button>
+            <div className="menuSolvingProject">
+              <button onClick={handleCancelation}>Փակել</button>
+              <button onClick={handleLogin}>Հաստատել</button>
+            </div>
           </div>
         </div>
       )}
@@ -99,43 +110,69 @@ const SolvingProject = () => {
       {showMenuModal && (
         <div className="modalSolvingProject menu-modal">
           <div className="menuSolvingProject">
-            <button onClick={() => handleMenuItemClick("help")}>Help</button>
+            <button onClick={() => handleMenuItemClick("help")}>
+              Օգնություն
+            </button>
             <button onClick={() => handleMenuItemClick("student")}>
-              Student
+              Ուսանող
             </button>
             <button onClick={() => handleMenuItemClick("problem")}>
-              Problem
+              Անհատական աշխատանք
             </button>
             <button onClick={() => handleMenuItemClick("advice")}>
-              Advice for the day
-            </button>
-
-            <button onClick={() => handleMenuItemClick("animation")}>
-              Animation
+              Օրվա խորհուրդ
             </button>
           </div>
 
           {selectedMenuItem === "help" && (
             <div className="page-content">
-              <h2>Help</h2>
-              <p>This is something for your web.</p>
+              <h2>Օգնություն</h2>
+              <p>
+                Այս հատվածում գտնվում է կուրսային աշխատանքի թեման։
+                <hr></hr> <br></br>
+                Անհատական աշխատանքը տեսնելու համար սեղմել «Անհատական աշխատանք»։
+                <hr></hr> <br></br>
+                Անհատական աշխատանքի լուծումը տեսնելու համար սեղմել «Գեներացնել
+                մատրից», այնուհետև «Կատարել տեղափոխում», որից հետո մատրիցն
+                աղյուսակի տեսքով կհայտնվի։
+                <hr></hr> <br></br>
+                Հեղինակին տեսնելու համար սեղմել «Ուսանող»։
+                <hr></hr> <br></br>
+                Օրվա խորհուրդն իմանալու համար սեղմել «Օրվա խորհուրդ»։
+                <hr></hr> <br></br>
+                Հետևյալ պատուհանից(«Կուրսային աշխատանք») դուրս գալու համար
+                սեղմել «Դուրս գալ» կոճակը։
+                <hr></hr> <br></br>
+                weeVent կայքը նախատեսված է նորություններ տեղադրելու և այլ
+                նորություններին ծանոթանալու համար։ Օգտվելու համար գրանցվել,
+                մուտք գործել անհատակն էջ։ "Տեղադրել նորություն" կոճակի միջոցով
+                կարող եք տեղադրել ձեր նորությունները, իսկ «Բոլոր նորություններ»
+                կոճակի միջոցով՝ ծանոթանալ այլ օգտատերերի տեղադրած նորությունների
+                հետ։
+                <hr></hr> <br></br>
+              </p>
             </div>
           )}
 
           {selectedMenuItem === "student" && (
             <div className="page-content">
-              <h2>Student</h2>
-              <p style={{ color: studentTextColor }}>{studentText}</p>
+              <h2>Ուսանող</h2>
+              <p>Անի Ավետիսյան</p>
+              <p>Երևանի ինֆորմատիկայի պետական քոլեջ, 019 կուրս</p>
+              <br></br>
+              <h3>Կուրսային աշխատանքի անվանում</h3>
+              <h1 style={{ color: studentTextColor }}>{studentText}</h1>
+              <br></br>
             </div>
           )}
 
           {selectedMenuItem === "problem" && (
             <div className="page-content">
-              <h2>Problem</h2>
+              <h2>Անհատական աշխատանք</h2>
               <p>
-                Given an integer m and a matrix containing mxm elements. Get a
-                new matrix by moving the largest and smallest columns of each
-                column.
+                Տրված են m ամբողջ թիվը և mxm տարր պարունակող մատրից։ Ստանալ նոր
+                մատրից՝ տեղափոխելով յուրքանաչյուր սյան մեծագույն և փոքրագույն
+                տարրերը։
               </p>
               <br></br>
               <MatrixManipulation />
@@ -144,12 +181,12 @@ const SolvingProject = () => {
 
           {selectedMenuItem === "advice" && (
             <div className="page-content">
-              <h2>Advice for the Day</h2>
+              <h2>Օրվա խորհուրդ</h2>
               <p>{getAdviceForTheDay()}</p>
             </div>
           )}
 
-          <button onClick={handleLogout}>Logout</button>
+          <button onClick={handleLogout}>Դուրս գալ</button>
         </div>
       )}
     </div>
