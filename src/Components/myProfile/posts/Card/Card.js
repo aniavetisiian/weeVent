@@ -8,7 +8,7 @@ const MyCard = (props) => {
     <div className="flip-card-Card">
       <div
         onClick={() => setRot(!rot)}
-        rot={rot}
+        rot={rot.toString()}
         className={
           rot
             ? ["flip-card-inner-Card", "rot"].join(" ")

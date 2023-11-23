@@ -25,27 +25,25 @@ class Profile extends React.Component {
       body: JSON.stringify(value),
     });
     const fetchedData = await data.json();
-    console.log(fetchedData);
+    //console.log(fetchedData)
   };
 
   fetchUserProducts = async () => {
     try {
       const token = localStorage.getItem("token");
+      const userId = localStorage.getItem("userId");
+      console.log(userId,'userId')
       const userData = await fetch(
-        //`http://localhost:3000/posts/${this.state._id}`,
-        //`http://localhost:3000/user/${this.state._id}`,
-        //"http://localhost:3000/posts/user/auth/profile",
-        "http://localhost:3000/posts/user/655ca780904d398f3d34324d", //id get
-        // "https://francophone-eh-53274.herokuapp.com/user/auth/profile",
+        `http://localhost:3000/posts/user/${userId}`, 
         {
           method: "GET",
           headers: {
             "auth-token": token,
-          },
+          },  
         }
       );
       const fetchedData = await userData.json();
-      console.log(fetchedData);
+      console.log(fetchedData,'fetchdata22222');
 
       if (fetchedData.message) {
         console.log(fetchedData.message);
@@ -62,10 +60,12 @@ class Profile extends React.Component {
   fetchUserData = async () => {
     try {
       const token = localStorage.getItem("token");
+      const userId = localStorage.getItem("userId");
+
+
+
       const userData = await fetch(
-        //`http://localhost:3000/user/${this.state._id}`, // get user Id and change with :userId
-        "http://localhost:3000/posts/user/:userId", //id get
-        // "https://francophone-eh-53274.herokuapp.com/user/auth/profile",
+        `http://localhost:3000/posts/user/${userId}`,
         {
           method: "GET",
           headers: {
@@ -74,16 +74,43 @@ class Profile extends React.Component {
         }
       );
       const fetchedUserData = await userData.json();
-      console.log(fetchedUserData);
+      console.log(fetchedUserData,'data');
 
       if (fetchedUserData.message) {
-        console.log(fetchedUserData.message);
+        console.log(fetchedUserData.message, "fetchedUserData msg");
+      } else {
+        
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  fetchUserInfo = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      const id = localStorage.getItem("userId");
+
+      const userData = await fetch(
+        `http://localhost:3000/posts/user-info/${id}`,
+        {
+          method: "GET",
+          headers: {
+            "auth-token": token,
+          },
+        }
+      );
+      const fetchUserInfo = await userData.json();
+      console.log(fetchUserInfo,'fetchUserInfo');
+
+      if (fetchUserInfo.message) {
+        console.log(fetchUserInfo.message, "User not found");
       } else {
         this.setState({
-          _id: fetchedUserData._id,
-          avatar: fetchedUserData.avatar,
-          name: fetchedUserData.username,
-          email: fetchedUserData.email,
+          _id: fetchUserInfo._id,
+          avatar: fetchUserInfo.avatar,
+          name: fetchUserInfo.username,
+          email: fetchUserInfo.email,
         });
       }
     } catch (error) {
@@ -96,6 +123,7 @@ class Profile extends React.Component {
     this.setState({ token: token });
     this.fetchUserData();
     this.fetchUserProducts();
+    this.fetchUserInfo();
   }
 
   render() {

@@ -3,11 +3,13 @@ import Card from "./Card/Card";
 import "./Posts.css";
 
 const Posts = (props) => {
+
   const posts = props.postsData.map((c) => {
+    console.log(c,'ccccc')
     return (
       <Card
         key={c._id}
-        avatar={c.avatar}
+        avatar={c.userId.avatar}
         img={c.imgUrl}
         title={c.title}
         description={c.description}

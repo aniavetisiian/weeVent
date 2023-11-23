@@ -15,7 +15,7 @@ const Card = (props) => {
       >
         <div
           onClick={() => setRotate(!rot)}
-          rot={rot}
+          rot={rot.toString()}
           className="flip-card-front13"
         >
           <div className="imgCard3">

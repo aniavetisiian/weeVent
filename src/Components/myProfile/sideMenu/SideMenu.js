@@ -2,12 +2,14 @@ import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import AppsIcon from "@material-ui/icons/Apps";
-// import HomeIcon from '@material-ui/icons/Home';
 import "./SideMenu.css";
 import { ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 const SideMenu = (props) => {
+
+  console.log(props,"props-----")
+ 
   return (
     <div className="sideMenu">
       <div className="AvatarWrap">

@@ -28,12 +28,15 @@ class SignIN extends React.Component {
       });
 
       const fetchedData = await data.json();
-      console.log(fetchedData);
+      console.log(fetchedData,'fetchDatatatta');
 
       if (fetchedData.message) {
         alert(fetchedData.message);
       } else {
         localStorage.setItem("token", fetchedData.auth_token);
+        localStorage.setItem("userId", fetchedData.userId);
+        
+
         this.props.history.push("/myProfile");
       }
     } catch (error) {

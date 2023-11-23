@@ -4,7 +4,7 @@ import SignIN from "./SignIn/SignIn";
 // import SignUp from "./SignUp/SignUp";
 
 const Flip = () => {
-  const [rot, setRotate] = useState(false);
+  const [rot, setRotate] = useState(true);
 
   return (
     <div className="flip-card">

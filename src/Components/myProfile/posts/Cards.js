@@ -5,6 +5,7 @@ import PostUploader from "./postUploader/PostUploader";
 import MyCard from "./Card/Card";
 
 const Cards = (props) => {
+
   const [open, setOpen] = React.useState(false);
   // const [rot, setRotate] = useState(false);
 
@@ -21,12 +22,14 @@ const Cards = (props) => {
   const posts = props.data.length ? (
     props.data.map((data) => (
       <MyCard
+        key={data._id}
         img={data.imgUrl}
         title={data.title}
         desc={data.description}
         date={data.data}
       />
     ))
+
   ) : (
     <div
       style={{
