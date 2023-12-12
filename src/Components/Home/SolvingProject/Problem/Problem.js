@@ -63,8 +63,12 @@ const MatrixManipulation = () => {
         <input type="number" value={m} onChange={(e) => setM(e.target.value)} />
       </label>
 
-      <button onClick={handleGenerateMatrix}>Գեներացնել մատրից</button>
-      <button onClick={handleMoveColumns}>Կատարել տեղափոխում</button>
+      <button className="buttonProject" onClick={handleGenerateMatrix}>
+        Գեներացնել մատրից
+      </button>
+      <button className="buttonProject" onClick={handleMoveColumns}>
+        Կատարել տեղափոխում
+      </button>
 
       <div>
         <h3>Գեներացված մատրից:</h3>

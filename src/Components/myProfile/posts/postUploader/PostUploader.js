@@ -3,31 +3,18 @@ import "./PostUploader.css";
 
 import { Formik } from "formik";
 class postUploader extends React.Component {
-  // submit = async(value) => {
-  //   const token = localStorage.getItem('token')
-  //     const data = await fetch('http://localhost:3000/posts/add',{
-  //         method: 'POST',
-  //         headers: {
-  //             "auth-token": token,
-  //             "Content-Type": "application/json"
-  //         },
-  //         body: JSON.stringify(value)
-  //     })
-  //     const fetchedData = await data.json()
-  //     console.log(fetchedData);
-  // }
   render() {
     return (
       <div className="modalWrap">
         <h1
           style={{
             margin: "30px",
-            fontSize: "50px",
+            fontSize: "30px",
             textAlign: "center",
             width: "100 %",
           }}
         >
-          Add something
+          Ավելացնել հրապարակում
         </h1>
 
         <Formik
@@ -42,44 +29,38 @@ class postUploader extends React.Component {
           {({ values, handleChange, handleBlur, handleSubmit }) => (
             <form className="modal-content" onSubmit={handleSubmit}>
               <div className="container">
-                <label htmlFor="title">
-                  {/* <b className="textInput">title</b> */}
-                </label>
+                <label htmlFor="title"></label>
                 <input
                   id="text"
                   type="text1"
-                  placeholder="Enter your title"
+                  placeholder="Մուտքագրել վերնագիրը։"
                   name="title"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.title}
                 />
 
-                <label htmlFor="img">
-                  {/* <b className="textInput">img</b> */}
-                </label>
+                <label htmlFor="img"></label>
                 <input
                   type="text1"
-                  placeholder="Enter img"
+                  placeholder="Մուտքագրել նկարը։"
                   name="img"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.img}
                 />
-                <label htmlFor="desc">
-                  {/* <b className="textInput">Description</b> */}
-                </label>
+                <label htmlFor="desc"></label>
                 <input
                   id="text"
                   type="text1"
-                  placeholder="Description"
+                  placeholder="Մուտքագրել այլ տվյալներ։"
                   name="desc"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.desc}
                 />
 
-                <button type="submit">Add</button>
+                <button type="submit">Ավելացնել</button>
               </div>
             </form>
           )}

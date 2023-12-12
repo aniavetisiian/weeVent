@@ -1,9 +1,10 @@
 import React from "react";
-
 import "./Home.css";
 import Flip from "../Authentication/Flip/Flip";
 import SolvingProject from "./SolvingProject/SolvingProject";
 import SineWaveAnimation from "./SolvingProject/AnimationWave/AnimationWave";
+import Footer from "./Footer/Footer";
+
 const Home = (props) => {
   console.log(props);
 
@@ -58,6 +59,8 @@ const Home = (props) => {
         </div>
         <SolvingProject />
       </div>
+
+      <Footer />
     </div>
   );
 };

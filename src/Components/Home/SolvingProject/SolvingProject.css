@@ -6,25 +6,13 @@
   margin-bottom: 200px;
 }
 
-.close-button {
-  position: relative;
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-size: 16px;
-  color: #555;
-}
-
-.close-button:hover {
-  color: #f00;
-}
-
 .modalSolvingProject {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(55, 47, 60, 0.9);
+  color: white;
   border-radius: 10px;
   padding: 20px;
   display: flex;
@@ -61,6 +49,7 @@
   margin: 0 auto;
 }
 
-button {
+.buttonProject {
   margin: 5px;
+  background-color: #ebebeb;
 }

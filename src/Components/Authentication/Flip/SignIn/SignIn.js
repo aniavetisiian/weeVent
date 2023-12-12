@@ -27,7 +27,6 @@ class SignIN extends React.Component {
       });
 
       const fetchedData = await data.json();
-      console.log(fetchedData, "fetchDatatatta");
 
       if (fetchedData.message) {
         alert(fetchedData.message);
@@ -38,7 +37,7 @@ class SignIN extends React.Component {
         this.props.history.push("/myProfile");
       }
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
   render() {
@@ -50,7 +49,6 @@ class SignIN extends React.Component {
         onSubmit={(values, { setSubmitting, resetForm }) => {
           setSubmitting(true);
           this.singIn(values);
-          // alert(JSON.stringify(values, null, 2));
           resetForm();
           setSubmitting(false);
         }}
@@ -71,7 +69,7 @@ class SignIN extends React.Component {
               <input
                 id="text"
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Մուտքագրել էլ. հասցեն։"
                 name="email"
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -81,12 +79,12 @@ class SignIN extends React.Component {
               <Error touched={touched.email} message={errors.email} />
 
               <label htmlFor="password">
-                <b className="textInput">Գաղտնագիր</b>
+                <b className="textInput">Գաղտնաբառ</b>
               </label>
               <input
                 id="password1"
                 type="password"
-                placeholder="Enter Password"
+                placeholder="Մուտքագրել գաղտնաբառը։"
                 name="password"
                 onChange={handleChange}
                 onBlur={handleBlur}

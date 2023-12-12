@@ -1,11 +1,10 @@
 import React from "react";
 import Card from "./Card/Card";
 import "./Posts.css";
+import { Link } from "react-router-dom";
 
 const Posts = (props) => {
-
   const posts = props.postsData.map((c) => {
-    console.log(c,'ccccc')
     return (
       <Card
         key={c._id}
@@ -21,8 +20,11 @@ const Posts = (props) => {
 
   return (
     <div className="posts">
+      <Link to="/myProfile">
+        <div className="goBack"></div>
+      </Link>
       <div className="header">
-        <h1 className="mainText">ALL NEWS</h1>
+        <h1 className="mainText">Բոլոր նորություններն ու միջոցառումները</h1>
       </div>
 
       <div className="cards">{posts}</div>

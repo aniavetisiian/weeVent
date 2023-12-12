@@ -3,7 +3,6 @@
   width: 280px;
   height: 400px;
   perspective: 1000px;
-  margin: 20px;
   margin: 50px;
 }
 
@@ -44,13 +43,4 @@
   overflow: auto;
 }
 
-.icon555 {
-  margin-top: 10px;
-  margin-left: 94;
-  /* background-image: url(/static/media/trash.2c3e6019.png); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 30px;
-  margin-left: 80px;
-  height: 30px;
-}
+

@@ -1,0 +1,34 @@
+/* Footer.css */
+
+.footer {
+    width: 100%;
+    height: 250px;
+    background-color: #ebebeb;
+    color: black;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  
+ 
+  .button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button img {
+    width: 30px; 
+    height: 30px;
+  }
+  
+
+  .contact-info {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  

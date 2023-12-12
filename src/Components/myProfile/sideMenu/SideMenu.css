@@ -1,31 +1,58 @@
-.bgAvatar {
-  width: 150px !important;
-  height: 150px !important;
-  margin-left: 25px;
-  margin-top: 25px;
-}
-
-.AvatarWrap {
-  height: 20%;
-  width: 100%;
-}
-
-.about {
-  margin-left: 65px;
-  margin-top: 40px;
-  font-size: 30px;
-  color: whitesmoke;
-}
-
-.SignOut {
-  margin-top: 30px;
-}
-
 .sideMenu {
-  width: 20%;
-  min-width: 250px;
-  height: 100%;
+  width: 100%;
+  height: 200px;
   background-image: url(../../Authentication/Flip/img/backImage.png);
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: center; 
+  padding: 100px;
+  box-sizing: border-box;
+}
+
+.avatarWrap {
+  width: 65%;
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 80px;
+}
+
+.bgAvatar {
+  width: 110px !important;
+  height: 110px !important;
+  margin-bottom: 10px;
+}
+
+.userInfo {
+  text-align: center;
+}
+
+.userName {
+  font-size: 28px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.menuItems {
+  width: 35%;
+  display: flex;
+  flex-direction: row; 
+  margin-top: 20px; 
+  gap: 50px;
+}
+
+.menuItem {
+  text-decoration: none;
+  color: white;
+  margin-bottom: 15px;
+  transition: background-color 0.3s;
+}
+
+.menuItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }

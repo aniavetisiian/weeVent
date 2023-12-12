@@ -30,7 +30,6 @@ class Registration extends React.Component {
       });
 
       const fetchedData = await data.json();
-      console.log(fetchedData);
 
       if (fetchedData.message) {
         alert(fetchedData.message);
@@ -38,7 +37,7 @@ class Registration extends React.Component {
         console.log(fetchedData);
       }
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
   render() {
@@ -70,7 +69,7 @@ class Registration extends React.Component {
               <input
                 id="username"
                 type="text"
-                placeholder="Enter your username"
+                placeholder="Մուտքագրել օգտանուն։"
                 name="username"
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -87,7 +86,7 @@ class Registration extends React.Component {
               <input
                 id="avatar"
                 type="text"
-                placeholder="Enter img for avatar"
+                placeholder="Մուտքագրել գլխավոր նկար։"
                 name="avatar"
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -101,7 +100,7 @@ class Registration extends React.Component {
               <input
                 id="email"
                 type="email"
-                placeholder="Enter email"
+                placeholder="Մուտքագրել էլ. հասցե։"
                 name="email"
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -110,12 +109,12 @@ class Registration extends React.Component {
               />
               <Error touched={touched.email} message={errors.email} />
               <label htmlFor="password">
-                <b className="textInput">Գաղտնագիր</b>
+                <b className="textInput">Գաղտնաբառ</b>
               </label>
               <input
                 id="password"
                 type="password"
-                placeholder="Enter password"
+                placeholder="Մուտքագրել գաղտնաբառը։"
                 name="password"
                 onChange={handleChange}
                 onBlur={handleBlur}

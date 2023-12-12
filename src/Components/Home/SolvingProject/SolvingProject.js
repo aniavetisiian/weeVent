@@ -71,9 +71,36 @@ const SolvingProject = () => {
     return adviceMessages[adviceIndex];
   };
 
+  // const [adviceMessages, setAdviceMessages] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchAdviceMessages = async () => {
+  //     try {
+  //       const response = await fetch("./advice.txt");
+  //       const text = await response.text();
+  //       const messages = text
+  //         .split("\n")
+  //         .filter((message) => message.trim() !== "");
+  //       setAdviceMessages(messages);
+  //     } catch (error) {
+  //       console.error("Error fetching advice messages:", error);
+  //     }
+  //   };
+
+  //   fetchAdviceMessages();
+  // }, []);
+
+  // const getAdviceForTheDay = () => {
+  //   const dayOfWeek = new Date().getDay();
+  //   const adviceIndex = dayOfWeek % adviceMessages.length;
+  //   //console.log(adviceMessages[adviceIndex]);
+
+  //   return adviceMessages[adviceIndex];
+  // };
+
   return (
     <div className="appSolvingProject">
-      <button onClick={() => setShowLoginModal(true)}>
+      <button className="buttonProject" onClick={() => setShowLoginModal(true)}>
         Կուրսային աշխատանք
       </button>
 
@@ -100,8 +127,12 @@ const SolvingProject = () => {
               />
             </label>
             <div className="menuSolvingProject">
-              <button onClick={handleCancelation}>Փակել</button>
-              <button onClick={handleLogin}>Հաստատել</button>
+              <button className="buttonProject" onClick={handleCancelation}>
+                Փակել
+              </button>
+              <button className="buttonProject" onClick={handleLogin}>
+                Հաստատել
+              </button>
             </div>
           </div>
         </div>
@@ -110,16 +141,28 @@ const SolvingProject = () => {
       {showMenuModal && (
         <div className="modalSolvingProject menu-modal">
           <div className="menuSolvingProject">
-            <button onClick={() => handleMenuItemClick("help")}>
+            <button
+              className="buttonProject"
+              onClick={() => handleMenuItemClick("help")}
+            >
               Օգնություն
             </button>
-            <button onClick={() => handleMenuItemClick("student")}>
+            <button
+              className="buttonProject"
+              onClick={() => handleMenuItemClick("student")}
+            >
               Ուսանող
             </button>
-            <button onClick={() => handleMenuItemClick("problem")}>
+            <button
+              className="buttonProject"
+              onClick={() => handleMenuItemClick("problem")}
+            >
               Անհատական աշխատանք
             </button>
-            <button onClick={() => handleMenuItemClick("advice")}>
+            <button
+              className="buttonProject"
+              onClick={() => handleMenuItemClick("advice")}
+            >
               Օրվա խորհուրդ
             </button>
           </div>
@@ -186,7 +229,9 @@ const SolvingProject = () => {
             </div>
           )}
 
-          <button onClick={handleLogout}>Դուրս գալ</button>
+          <button className="buttonProject" onClick={handleLogout}>
+            Դուրս գալ
+          </button>
         </div>
       )}
     </div>

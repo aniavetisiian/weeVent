@@ -13,7 +13,6 @@ class Profile extends React.Component {
     data: {},
   };
 
-  //addPost
   submit = async (value) => {
     const token = localStorage.getItem("token");
     const data = await fetch("http://localhost:3000/posts/add", {
@@ -25,25 +24,23 @@ class Profile extends React.Component {
       body: JSON.stringify(value),
     });
     const fetchedData = await data.json();
-    //console.log(fetchedData)
+    console.log(fetchedData);
   };
 
   fetchUserProducts = async () => {
     try {
       const token = localStorage.getItem("token");
       const userId = localStorage.getItem("userId");
-      console.log(userId,'userId')
       const userData = await fetch(
-        `http://localhost:3000/posts/user/${userId}`, 
+        `http://localhost:3000/posts/user/${userId}`,
         {
           method: "GET",
           headers: {
             "auth-token": token,
-          },  
+          },
         }
       );
       const fetchedData = await userData.json();
-      console.log(fetchedData,'fetchdata22222');
 
       if (fetchedData.message) {
         console.log(fetchedData.message);
@@ -62,8 +59,6 @@ class Profile extends React.Component {
       const token = localStorage.getItem("token");
       const userId = localStorage.getItem("userId");
 
-
-
       const userData = await fetch(
         `http://localhost:3000/posts/user/${userId}`,
         {
@@ -74,13 +69,7 @@ class Profile extends React.Component {
         }
       );
       const fetchedUserData = await userData.json();
-      console.log(fetchedUserData,'data');
-
-      if (fetchedUserData.message) {
-        console.log(fetchedUserData.message, "fetchedUserData msg");
-      } else {
-        
-      }
+      console.log(fetchedUserData, "data");
     } catch (error) {
       console.log(error);
     }
@@ -101,7 +90,7 @@ class Profile extends React.Component {
         }
       );
       const fetchUserInfo = await userData.json();
-      console.log(fetchUserInfo,'fetchUserInfo');
+      console.log(fetchUserInfo, "fetchUserInfo");
 
       if (fetchUserInfo.message) {
         console.log(fetchUserInfo.message, "User not found");

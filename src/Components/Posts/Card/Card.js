@@ -6,7 +6,7 @@ const Card = (props) => {
   const [rot, setRotate] = useState(false);
 
   return (
-    <div className={"flip-card13"}>
+    <div className="flip-card13">
       <br />
       <div
         className={
@@ -28,57 +28,25 @@ const Card = (props) => {
             <div className="info3">
               <div className="avatar3">
                 <Avatar
-                  style={{ width: 60, height: 60 }}
+                  style={{ width: 80, height: 80 }}
                   alt="Remy Sharp"
                   src={props.avatar}
                 />
               </div>
               <div className="infoText3">
-                <p
-                  style={{
-                    height: 30,
-                    fontSize: 20,
-                    color: "white",
-                  }}
-                >
-                  <b>{props.name}</b>
-                </p>
+                <p className="username3">{props.name}</p>
                 <div className="title3">
-                  <p
-                    style={{
-                      color: "white",
-                      textAline: "center",
-                      fontSize: 25,
-                    }}
-                  >
-                    {props.title}
-                  </p>
+                  <p className="titleText3">{props.title}</p>
                 </div>
               </div>
             </div>
 
             <div className="text3">
               <div className="desc3">
-                <p
-                  style={{
-                    color: "white",
-                    textAline: "center",
-                    fontSize: 20,
-                  }}
-                >
-                  {props.description}
-                </p>
+                <p className="descText3">{props.description}</p>
               </div>
               <div className="date3">
-                <p
-                  style={{
-                    color: "white",
-                    textAline: "center",
-                    fontSize: 20,
-                  }}
-                >
-                  {props.date.slice(0, 10)}
-                </p>
+                <p className="dateText3">{props.date.slice(0, 10)}</p>
               </div>
             </div>
           </div>

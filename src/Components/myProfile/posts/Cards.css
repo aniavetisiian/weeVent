@@ -1,27 +1,34 @@
-.icon {
-  color: rgba(255, 255, 255, 0.54);
+.cardsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;padding: 100px;
 }
 
-.PostsImg {
+.postsContainer {
   width: 100%;
-  height: 100%;
+  display: flex;
+  justify-content: flex-start; /* Align posts to the left */
+  overflow: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.PostsImgs {
-  width: 550px !important;
-  height: 500px !important;
-  box-shadow: 0px 0px 33px 8px rgba(230, 173, 233, 0.75);
-  margin: 40px;
+
+.noPost {
+  width: 280px;
+  height: 400px;
+  background-color: white;
+  margin: 10px;
+  text-align: center;
 }
 
 .addPost {
   background-color: white;
-  width: 450px !important;
-  height: 90px !important;
+  width: 450px;
+  height: 90px;
   box-shadow: 0px 0px 33px 8px rgba(230, 173, 233, 0.75);
   margin: 40px;
-  align-items: center;
-  padding: 2px;
-  justify-content: center;
   text-align: center;
   font-weight: bolder;
   font-size: 50px;
@@ -29,5 +36,6 @@
 
 .para {
   margin-top: 20px;
-  font-size: 40px;
+  font-size: 30px;
+  
 }

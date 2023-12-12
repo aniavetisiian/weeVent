@@ -7,37 +7,32 @@ import { ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 const SideMenu = (props) => {
-
-  console.log(props,"props-----")
- 
   return (
     <div className="sideMenu">
-      <div className="AvatarWrap">
+      <div className="avatarWrap">
         <Avatar className="bgAvatar" src={props.avatar} />
+        <div className="userInfo">
+          <div className="userName">{props.name}</div>
+        </div>
       </div>
 
-      <div style={{ marginLeft: 55, fontSize: 40, color: "white" }}>
-        <b>{props.name}</b>
-      </div>
-
-      <div className="SignOut">
-        <Link to="/posts">
+      <div className="menuItems">
+        <Link to="/posts" className="menuItem">
           <ListItem button key="cards">
             <ListItemIcon>
               <AppsIcon />
             </ListItemIcon>
-            <ListItemText primary="Posts" style={{ color: "white" }} />
+            <ListItemText primary="Հրապարակումներ" />
           </ListItem>
         </Link>
 
-        <Link to="/">
-          <ListItem button key="Sign Out">
+        <Link to="/" className="menuItem">
+          <ListItem button key="signOut">
             <ListItemIcon>
               <ExitToAppIcon />
             </ListItemIcon>
             <ListItemText
-              primary="Sign Out"
-              style={{ color: "white" }}
+              primary="Դուրս գալ"
               onClick={() => {
                 localStorage.removeItem("token");
               }}
